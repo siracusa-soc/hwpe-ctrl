@@ -330,11 +330,15 @@ module hwpe_ctrl_uloop
 
       always_comb
       begin
+        flags_o.next_idx  = 0;
         flags_o = shadow_flags_rd;
         flags_o.next_offs = registers;
         flags_o.next_valid = flags_valid;
         flags_o.next_done  = done_int;
-        flags_o.next_idx  = curr_idx;
+        for(int i=0; i<NB_LOOPS; i++) begin 
+          flags_o.next_idx[i]  = curr_idx[i];
+        end 
+        // flags_o.next_idx  = curr_idx;
         flags_o.valid = out_valid;
         flags_o.ready = shadow_flags_wr.valid;
         flags_o.loop  = out_loop;
