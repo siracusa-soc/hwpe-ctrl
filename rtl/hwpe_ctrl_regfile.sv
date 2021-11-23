@@ -100,7 +100,7 @@ module hwpe_ctrl_regfile
   generate
     logic [N_CONTEXT-1:0]                  wren_cxt;
 
-    hwpe_ctrl_regfile_latch_test_wrap #(
+    hwpe_ctrl_regfile_test_wrap #(
       .ADDR_WIDTH(SCM_ADDR_WIDTH),
       .DATA_WIDTH(32)
     ) i_regfile_latch (

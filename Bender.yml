@@ -5,6 +5,7 @@ package:
 
 dependencies:
   tech_cells_generic: { git: "https://github.com/pulp-platform/tech_cells_generic.git", version: 0.2.2 }
+  scm: { git: "git@github.com:pulp-platform/scm.git", rev: "master" }
 
 sources:
   - include_dirs:
@@ -17,11 +18,10 @@ sources:
       - rtl/hwpe_ctrl_interfaces.sv
       - rtl/hwpe_ctrl_package.sv
       # Level 1
-      - rtl/hwpe_ctrl_regfile_latch.sv
       - rtl/hwpe_ctrl_seq_mult.sv
       - rtl/hwpe_ctrl_uloop.sv
       # Level 2
-      - rtl/hwpe_ctrl_regfile_latch_test_wrap.sv
+      - rtl/hwpe_ctrl_regfile_test_wrap.sv
       # Level 3
       - rtl/hwpe_ctrl_regfile.sv
       # Level 4
